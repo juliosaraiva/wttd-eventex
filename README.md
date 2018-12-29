@@ -2,6 +2,7 @@ Eventex
 ---------
 
 [![Build Status](https://travis-ci.org/juliosaraiva/wttd-eventex.svg?branch=master)](https://travis-ci.org/juliosaraiva/wttd-eventex)
+[![Build status](https://ci.appveyor.com/api/projects/status/79v28mmbro641lj5?svg=true)](https://ci.appveyor.com/project/juliosaraiva/wttd-eventex)
 
 Sistema de eventos encomendado pela Morena.
 
