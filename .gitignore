@@ -117,6 +117,9 @@ dmypy.json
 # MacOS Files & Folders
 .DS_Store
 .environment
+.idea/dictionaries/juliosaraiva.xml
+.idea/*
+.vscode
 
 # PipEnv
 Pipfile
