@@ -118,7 +118,6 @@ dmypy.json
 # MacOS Files & Folders
 .DS_Store
 .environment
-.idea/dictionaries/juliosaraiva.xml
 .idea/*
 .vscode
 
@@ -128,3 +127,4 @@ Pipfile.lock
 
 #StaticFiles
 staticfiles
+eventex/subscriptions/migrations/0001_initial.py
