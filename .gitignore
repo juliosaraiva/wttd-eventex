@@ -127,4 +127,3 @@ Pipfile.lock
 
 #StaticFiles
 staticfiles
-eventex/subscriptions/migrations/0001_initial.py
