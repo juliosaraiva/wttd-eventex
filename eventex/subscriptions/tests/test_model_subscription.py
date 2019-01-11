@@ -2,6 +2,7 @@ from datetime import datetime
 from django.test import TestCase
 from eventex.subscriptions.models import Subscription
 
+
 class SubscriptionModelTest(TestCase):
     def setUp(self):
         self.obj = Subscription(
@@ -21,3 +22,7 @@ class SubscriptionModelTest(TestCase):
 
     def test_str(self):
         self.assertEqual("Julio Saraiva", str(self.obj))
+
+    def test_paid_default_to_False(self):
+        """By default paid must be False."""
+        self.assertEqual(False, self.obj.paid)
