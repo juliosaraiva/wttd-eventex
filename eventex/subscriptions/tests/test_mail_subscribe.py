@@ -4,8 +4,8 @@ from django.test import TestCase
 
 class SubscribePostValid(TestCase):
     def setUp(self):
-        data = dict(name='Julio Saraiva', cpf='91963230272',
-                    email="contato@juliosaraiva.com.br", phone="61-99162-8287")
+        data = dict(name='Julio Saraiva', cpf='12345678911',
+                    email="test@email.com", phone="61-99162-8287")
         self.resp = self.client.post('/inscricao/', data)
         self.email = mail.outbox[0]
 
@@ -24,8 +24,8 @@ class SubscribePostValid(TestCase):
     def test_subscription_email_body(self):
         contents = [
             "Julio Saraiva",
-            "91963230272",
-            "contato@juliosaraiva.com.br",
+            "12345678911",
+            "test@email.com",
             "61-99162-8287"
         ]
         for content in contents:
