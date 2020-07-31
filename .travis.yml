@@ -5,6 +5,7 @@ install:
   - cp contrib/env-sample .env
   - pip install pipenv
   - pipenv --python 3.8
+  - pipenv lock
   - pipenv sync
   - pipenv sync --dev
 script:
