@@ -21,8 +21,7 @@ class SubscribeGet(TestCase):
                 ('<input', 6),
                 ('type="text"', 3),
                 ('type="email"', 1),
-                ('type="submit"', 1)
-        )
+                ('type="submit"', 1))
         for text, count in tags:
             with self.subTest():
                 self.assertContains(self.resp, text, count)
