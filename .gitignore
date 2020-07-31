@@ -119,11 +119,6 @@ dmypy.json
 .environment
 .idea/dictionaries/juliosaraiva.xml
 .idea/*
-.vscode
-
-# PipEnv
-Pipfile
-Pipfile.lock
 
 #StaticFiles
 staticfiles
