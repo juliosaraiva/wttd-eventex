@@ -1,14 +1,31 @@
 language: python
+dist: xenial
+sudo: true
 python:
-  - "3.8"
+  - 3.8
+
+services:
+  postgresql
+
+addons:
+  postgresql: '9.5'
+
+env:
+  global:
+    - PIPENV_VENV_IN_PROJECT=1
+    - PIPENV_IGNORE_VIRTUALENVS=1
+
 install:
-  - sudo apt-get install libpq-dev
   - cp contrib/env-sample .env
   - pip install pipenv
   - pipenv --python 3.8
   - pipenv lock
   - pipenv sync
   - pipenv sync --dev
+
+before_script:
+  - psql -c "CREATE DATABASE testdb;" -U postgres
+
 script:
-  - flake8
-  - python manage.py test
+  - pipenv run flake8
+  - pipenv run python manage.py test
