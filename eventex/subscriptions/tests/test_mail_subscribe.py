@@ -1,11 +1,12 @@
 from django.core import mail
 from django.test import TestCase
+from django.shortcuts import resolve_url as r
 
 
 class SubscribePostValid(TestCase):
     def setUp(self):
-        data = dict(name='Julio Saraiva', cpf='12345678911',
-                    email="test@email.com", phone="61-99162-8287")
+        data = dict(name='Cliente Silva', cpf='12345678911',
+                    email="cliente@gmail.com", phone="61-99162-8287")
         self.resp = self.client.post('/inscricao/', data)
         self.email = mail.outbox[0]
 
@@ -18,14 +19,14 @@ class SubscribePostValid(TestCase):
         self.assertEqual(expect, self.email.from_email)
 
     def test_subscription_email_to(self):
-        expect = ['contato@eventex.com.br', 'test@email.com']
+        expect = ['contato@eventex.com.br', 'cliente@gmail.com']
         self.assertEqual(expect, self.email.to)
 
     def test_subscription_email_body(self):
         contents = [
-            "Julio Saraiva",
+            "Cliente Silva",
             "12345678911",
-            "test@email.com",
+            "cliente@gmail.com",
             "61-99162-8287"
         ]
         for content in contents:

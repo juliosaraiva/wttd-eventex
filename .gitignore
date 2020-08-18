@@ -24,6 +24,7 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*.ipynb
 MANIFEST
 
 # PyInstaller
@@ -117,7 +118,6 @@ dmypy.json
 # MacOS Files & Folders
 .DS_Store
 .environment
-.idea/dictionaries/juliosaraiva.xml
 .idea/*
 
 #StaticFiles
