@@ -6,7 +6,7 @@ from eventex.subscriptions.models import Subscription
 class SubscriptionDetailGet(TestCase):
     def setUp(self):
         self.obj = Subscription.objects.create(
-            name='Julinux',cpf='12345678901',
+            name='Julinux', cpf='12345678901',
             email='julinux@gmail.com', phone='61-87654321')
         self.resp = self.client.get(r('subscriptions:detail', self.obj.pk))
 

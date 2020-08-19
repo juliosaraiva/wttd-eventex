@@ -1,6 +1,7 @@
 from django.db import models
 from eventex.subscriptions.validators import validate_cpf
 
+
 class Subscription(models.Model):
     name = models.CharField('nome', max_length=100)
     cpf = models.CharField('CPF', max_length=11, validators=[validate_cpf])
