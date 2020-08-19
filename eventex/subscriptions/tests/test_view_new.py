@@ -83,9 +83,10 @@ class TemplateRegressionTest(TestCase):
         invalid_data = dict(name='Cliente Silva', cpf='12345678911')
         response = self.client.post(r('subscriptions:new'), invalid_data)
 
+
 class SubscribeSuccessMessage(TestCase):
     def test_message(self):
         data = dict(name="Cliente Silva", cpf="12345678911",
                     email="cliente@gmail.com", phone="61-99162-8287")
         response = self.client.post("/inscricao/", data, follow=True)
-        self.assertContains(response, "Inscrição Realizada com Sucesso!")
+        self.assertContains(response, "Obrigada por se inscrever!")

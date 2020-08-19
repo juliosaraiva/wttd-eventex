@@ -6,6 +6,7 @@ class SubscriptionFormTest(TestCase):
     def setUp(self):
         self.form = SubscriptionForm()
 
+
 class SubscriptionFormTest(TestCase):
     def test_form_has_fields(self):
         """Form must have 4 fields"""
@@ -23,8 +24,8 @@ class SubscriptionFormTest(TestCase):
         self.assertFormErrorCode(form, 'cpf', 'length')
 
     def test_must_be_capitalized(self):
-        form = self.make_validated_form(name="JULIO saraiva")
-        self.assertEqual('Julio Saraiva', form.cleaned_data['name'])
+        form = self.make_validated_form(name="CLIENTE silva")
+        self.assertEqual('Cliente Silva', form.cleaned_data['name'])
 
     def test_email_is_optional(self):
         form = self.make_validated_form(email='')
@@ -39,7 +40,6 @@ class SubscriptionFormTest(TestCase):
         form = self.make_validated_form(email='', phone='')
         self.assertListEqual(['__all__'], list(form.errors))
 
-
     def assertFormErrorCode(self, form, field, code):
         errors = form.errors.as_data()
         errors_list = errors[field]
@@ -53,8 +53,8 @@ class SubscriptionFormTest(TestCase):
         self.assertListEqual([msg], errors_list)
 
     def make_validated_form(self, **kwargs):
-        valid = dict(name="Julinux Saraiva", cpf="12345678901",
-                    email="julinux@saraiva.com.br", phone="61-991628287")
+        valid = dict(name="Cliente Silva", cpf="12345678901",
+                     email="cliente@gmail.com", phone="61-991628287")
         data = dict(valid, **kwargs)
         form = SubscriptionForm(data)
         form.is_valid()
