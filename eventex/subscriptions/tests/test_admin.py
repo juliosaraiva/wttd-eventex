@@ -5,8 +5,8 @@ from unittest.mock import Mock
 
 class SubscriptionModelAdminTest(TestCase):
     def setUp(self):
-        Subscription.objects.create(name="Julio Saraiva", cpf="91963230272",
-                                    email="contato@juliosaraiva.com.br", phone="61-991628287")
+        Subscription.objects.create(name="Cliente Silva", cpf="12345678911",
+                                    email="cliente@gmail.com", phone="61-991628287")
 
         self.model_admin = SubscriptionModelAdmin(Subscription, admin.site)
 

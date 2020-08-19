@@ -6,10 +6,10 @@ from eventex.subscriptions.models import Subscription
 class SubscriptionModelTest(TestCase):
     def setUp(self):
         self.obj = Subscription(
-            name="Julio Saraiva",
-            cpf="91963230272",
-            email="contato@juliosaraiva.com.br",
-            phone="21-991628287"
+            name="Cliente Silva",
+            cpf="12345678911",
+            email="cliente@gmail.com",
+            phone="61-991628287"
         )
         self.obj.save()
 
