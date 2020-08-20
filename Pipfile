@@ -7,6 +7,7 @@ verify_ssl = true
 flake8 = "*"
 autopep8 = "*"
 pylint = "*"
+jupyter = "*"
 
 [packages]
 dj-database-url = "*"
@@ -21,4 +22,4 @@ django-extensions = "*"
 django-test-without-migrations = "*"
 
 [requires]
-python_version = ">=3.6"
+python_version = "3.8"
