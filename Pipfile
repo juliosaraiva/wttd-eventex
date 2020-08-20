@@ -7,7 +7,6 @@ verify_ssl = true
 flake8 = "*"
 autopep8 = "*"
 pylint = "*"
-django-test-without-migrations = "*"
 
 [packages]
 dj-database-url = "*"
@@ -19,6 +18,7 @@ gunicorn = "*"
 psycopg2 = "*"
 Django = "*"
 django-extensions = "*"
+django-test-without-migrations = "*"
 
 [requires]
 python_version = "3.8"
