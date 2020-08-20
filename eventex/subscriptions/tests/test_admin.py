@@ -12,7 +12,7 @@ class SubscriptionModelAdminTest(TestCase):
 
     def test_has_action(self):
         """Action mark_as_paid should be installed"""
-        model_admin = SubscriptionModelAdmin(Subscription, admin.site)
+        SubscriptionModelAdmin(Subscription, admin.site)
         self.assertIn('mark_as_paid', self.model_admin.actions)
 
     def test_mark_all(self):

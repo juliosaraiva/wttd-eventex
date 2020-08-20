@@ -5,6 +5,7 @@ from eventex.core.models import Speaker
 
 class SpeakerDetailGet(TestCase):
     """GET should return status 200"""
+
     def setUp(self):
         Speaker.objects.create(
             name='Grace Hopper',

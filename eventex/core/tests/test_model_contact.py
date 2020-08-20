@@ -12,13 +12,19 @@ class ContactModelTest(TestCase):
         )
 
     def test_email(self):
-        contact = Contact.objects.create(speaker=self.speaker, kind=Contact.EMAIL,
-                                         value='julinux@saraiva.com.br')
+        Contact.objects.create(
+            speaker=self.speaker,
+            kind=Contact.EMAIL,
+            value='julinux@saraiva.com.br'
+        )
         self.assertTrue(Contact.objects.exists())
 
     def test_phone(self):
-        contact = Contact.objects.create(speaker=self.speaker, kind=Contact.PHONE,
-                                         value='61-98230-3695')
+        Contact.objects.create(
+            speaker=self.speaker,
+            kind=Contact.PHONE,
+            value='61-98230-3695'
+        )
         self.assertTrue(Contact.objects.exists())
 
     def test_choices(self):
@@ -28,5 +34,5 @@ class ContactModelTest(TestCase):
 
     def test_str(self):
         contact = Contact(speaker=self.speaker, kind=Contact.EMAIL,
-                                         value='julinux@saraiva.com.br')
+                          value='julinux@saraiva.com.br')
         self.assertEqual('julinux@saraiva.com.br', str(contact))

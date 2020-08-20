@@ -5,9 +5,7 @@ from eventex.core.models import Talk
 class TalkModelTest(TestCase):
     def setUp(self):
         self.talk = Talk.objects.create(
-            title='Título da Palestra',
-            # start='10:00',
-            # description='Descrição da palestra.'
+            title='Título da Palestra'
         )
 
     def test_create(self):
@@ -40,5 +38,3 @@ class TalkModelTest(TestCase):
 
     def test_str(self):
         self.assertEqual('Título da Palestra', str(self.talk))
-
-

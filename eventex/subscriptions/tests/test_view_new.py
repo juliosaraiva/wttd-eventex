@@ -81,7 +81,7 @@ class SubscriptionsNewPostInvalid(TestCase):
 class TemplateRegressionTest(TestCase):
     def test_template_has_non_field_errors(self):
         invalid_data = dict(name='Cliente Silva', cpf='12345678911')
-        response = self.client.post(r('subscriptions:new'), invalid_data)
+        self.client.post(r('subscriptions:new'), invalid_data)
 
 
 class SubscribeSuccessMessage(TestCase):
