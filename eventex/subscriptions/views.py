@@ -35,8 +35,6 @@ def create(request):
                 'subscriptions/subscription_email.txt',
                 {'subscription': subscription})
 
-    messages.success(request, 'Inscrição Realizada com Sucesso!')
-
     return HttpResponseRedirect(r('subscriptions:detail', subscription.pk))
 
 
