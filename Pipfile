@@ -8,6 +8,7 @@ flake8 = "*"
 autopep8 = "*"
 pylint = "*"
 jupyter = "*"
+sqlformatter = "*"
 
 [packages]
 dj-database-url = "*"
