@@ -35,6 +35,16 @@ class SubscriptionFormTest(TestCase):
         form = self.make_validated_form(email='', phone='')
         self.assertListEqual(['__all__'], list(form.errors))
 
+    def test_phone_invalid_format(self):
+        """Phone number must be in a valid format."""
+        form = self.make_validated_form(phone="12345")
+        self.assertFormErrorCode(form, 'phone', 'invalid')
+
+    def test_phone_with_letters(self):
+        """Phone number must not contain letters."""
+        form = self.make_validated_form(phone="abc12345")
+        self.assertFormErrorCode(form, 'phone', 'invalid')
+
     def assertFormErrorCode(self, form, field, code):
         errors = form.errors.as_data()
         errors_list = errors[field]
@@ -49,7 +59,7 @@ class SubscriptionFormTest(TestCase):
 
     def make_validated_form(self, **kwargs):
         valid = dict(name="Cliente Silva", cpf="12345678901",
-                     email="cliente@gmail.com", phone="61-991628287")
+                     email="cliente@gmail.com", phone="+5561991628287")
         data = dict(valid, **kwargs)
         form = SubscriptionForm(data)
         form.is_valid()

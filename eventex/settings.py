@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'test_without_migrations',
     'django_extensions',
+    'phonenumber_field',
     'eventex.core',
     'eventex.subscriptions.apps.SubscriptionsConfig',
 

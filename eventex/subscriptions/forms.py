@@ -1,9 +1,13 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from phonenumber_field.formfields import PhoneNumberField
+
 from eventex.subscriptions.models import Subscription
 
 
 class SubscriptionForm(forms.ModelForm):
+    phone = PhoneNumberField(widget=forms.TextInput, label='telefone')
+
     class Meta:
         model = Subscription
         fields = ['name', 'cpf', 'email', 'phone']
